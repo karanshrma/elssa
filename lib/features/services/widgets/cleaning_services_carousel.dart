@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../core/app_constants.dart';
 import 'cleaning_service_card.dart';
 
@@ -7,7 +8,7 @@ class CleaningServicesCarousel extends StatelessWidget {
 
   static const List<Map<String, String>> _services = [
     {
-      'name': 'Kitchen\nCleaning',
+      'name': 'Kitchen Cleaning',
       'image': 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop'
     },
     {
@@ -15,7 +16,7 @@ class CleaningServicesCarousel extends StatelessWidget {
       'image': 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop'
     },
     {
-      'name': 'Full Home\nCleaning',
+      'name': 'Full Home Cleaning',
       'image': 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=300&fit=crop'
     },
   ];
@@ -23,7 +24,7 @@ class CleaningServicesCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 130,
+      height: 140, // ✅ FIX: Increased height to accommodate all content
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: AppConstants.horizontalPadding),

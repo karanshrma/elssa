@@ -19,6 +19,8 @@ const List<String> carouselImages = [
   'https://images-na.ssl-images-amazon.com/images/G/31/img21/shoes/September/SSW/pc-header._CB641971330_.jpg',
 ];
 
+
+
 // Home Services with Icon URLs
 final Map<String, Map<String, String>> homeServicesWithIcons = {
   'kitchen_cleaning': {
@@ -35,6 +37,21 @@ final Map<String, Map<String, String>> homeServicesWithIcons = {
   },
 };
 class GLobalVariables{
+
+  static const List<Map<String, String>> services = [
+    {
+      'name': 'Kitchen Cleaning',
+      'image': 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop'
+    },
+    {
+      'name': 'Sofa Cleaning',
+      'image': 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop'
+    },
+    {
+      'name': 'Full Home Cleaning',
+      'image': 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=300&fit=crop'
+    },
+  ];
 
 
   static List<Map<String, String?>> getServices() {

@@ -43,6 +43,7 @@ dependencies:
   flutter_otp_text_field: ^1.5.1+1
   carousel_slider: ^5.1.1
   dots_indicator: ^4.0.1
+  flutter_screenutil: ^5.9.3
 
 dev_dependencies:
   flutter_test:

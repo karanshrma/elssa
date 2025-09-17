@@ -1,6 +1,7 @@
 import 'package:elssa/features/auth/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
@@ -28,18 +29,24 @@ class _MyAppState extends State<MyApp> {
   }
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Elssa',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xFFFDFEFE),
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFFFDFEFE),
-          elevation: 0,
-          foregroundColor: Colors.black,
-        ),
-      ),
-      home: SignupScreen(),
+    return ScreenUtilInit(
+      designSize: const Size(360 , 502),
+      builder: (context , child) {
+        return MaterialApp(
+          title: 'Elssa',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            scaffoldBackgroundColor: const Color(0xFFFDFEFE),
+            appBarTheme: const AppBarTheme(
+              backgroundColor: Color(0xFFFDFEFE),
+              elevation: 0,
+              foregroundColor: Colors.black,
+            ),
+          ),
+          home: child
+        );
+      },
+      child: const SignupScreen()
     );
   }
 }

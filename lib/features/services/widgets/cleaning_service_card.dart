@@ -17,47 +17,51 @@ class CleaningServiceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text('$name tapped')));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('$name tapped')),
+        );
       },
       borderRadius: BorderRadius.circular(AppConstants.borderRadius),
       child: SizedBox(
         width: 120,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              constraints: const BoxConstraints(maxHeight: 130),
-              width: 120,
-              height: 80,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
+            // ✅ FIX: Clean container without conflicting constraints
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Container(
+                width: 120,
+                height: 80,
                 color: Colors.grey.shade100,
-              ),
-              clipBehavior: Clip.antiAlias,
-              child: Image.network(
-                imageUrl,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) => Container(
-                  color: Colors.grey.shade200,
-                  child: const Icon(Icons.image, size: 42, color: Colors.grey),
+                child: Image.network(
+                  imageUrl,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) => Container(
+                    color: Colors.grey.shade200,
+                    child: const Icon(
+                      Icons.image,
+                      size: 32,
+                      color: Colors.grey,
+                    ),
+                  ),
                 ),
               ),
             ),
-            const SizedBox(height: 6),
-            Flexible(
-              child: SizedBox(
-                height: 42,
+            const SizedBox(height: 8),
+            // ✅ FIX: Proper text container with intrinsic height
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4),
                 child: Text(
                   name,
+                  textAlign: TextAlign.center,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                     fontWeight: FontWeight.w500,
-                    fontSize: 10,
-                    height: 1.0,
+                    fontSize: 12, // ✅ FIX: Increased font size for readability
+                    height: 1.2, // ✅ FIX: Better line height
                     color: AppColors.textPrimary,
                   ),
                 ),

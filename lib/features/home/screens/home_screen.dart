@@ -4,6 +4,7 @@ import '../../../core/carousel_image.dart';
 import '../../../app_bottom_nav.dart';
 import '../../../core/footer_watermark.dart';
 import '../../../core/section_tile.dart';
+import '../../../global_variables.dart';
 import '../../services/widgets/cleaning_services_carousel.dart';
 import '../../services/widgets/popular_services_carousel.dart';
 import '../../services/widgets/safety_measures_section.dart';
@@ -38,12 +39,16 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFFFDFEFE),
       appBar: AppBar(
+        centerTitle: false,
         backgroundColor: const Color(0xFFFDFEFE),
         toolbarHeight: 80,
         surfaceTintColor: Colors.transparent,
         title: LocationBar(),
         automaticallyImplyLeading: false,
         elevation: 0,
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.search , color: Colors.grey , size: 11,),)
+        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(

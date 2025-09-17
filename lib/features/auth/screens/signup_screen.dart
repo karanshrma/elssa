@@ -1,12 +1,14 @@
 import 'package:elssa/core/custom_elevated_button.dart';
 import 'package:elssa/features/auth/screens/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../global_variables.dart';
 
 class SignupScreen extends StatefulWidget {
   static route() => MaterialPageRoute(builder: (context) => SignupScreen());
+
   const SignupScreen({super.key});
 
   @override
@@ -22,12 +24,12 @@ class _SignupScreenState extends State<SignupScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print(' Signup screen : R${MediaQuery.of(context).size}');
     return Scaffold(
       backgroundColor: const Color(0xFFFDFEFE),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-
           Expanded(
             flex: 4,
             child: SizedBox(
@@ -41,14 +43,12 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
           ),
 
-
           Expanded(
             flex: 4,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 children: [
-
                   Column(
                     children: [
                       Center(
@@ -65,14 +65,13 @@ class _SignupScreenState extends State<SignupScreen> {
                       Text(
                         'Continue with Phone Number',
                         style: TextStyle(
-                          fontSize: 11,
+                          fontSize: 11.sp,
                           color: Colors.grey[600],
                         ),
                       ),
                       const SizedBox(height: 20),
                     ],
                   ),
-
 
                   Container(
                     decoration: BoxDecoration(
@@ -81,11 +80,13 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     child: Row(
                       children: [
-
                         Flexible(
                           flex: 2,
                           child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 4,
+                            ),
                             child: DropdownButtonHideUnderline(
                               child: DropdownButton<String>(
                                 value: _selectedCountry,
@@ -93,28 +94,35 @@ class _SignupScreenState extends State<SignupScreen> {
                                 onChanged: (String? newValue) {
                                   if (newValue != null) {
                                     final country = countries.firstWhere(
-                                          (c) => c['name'] == newValue,
+                                      (c) => c['name'] == newValue,
                                     );
                                     setState(() {
                                       _selectedCountry = newValue;
                                       _selectedCountryCode = country['code']!;
                                       _selectedFlag = country['flag']!;
                                     });
-                                    _fullPhoneNumber = '$_selectedCountryCode${_phoneController.text}';
+                                    _fullPhoneNumber =
+                                        '$_selectedCountryCode${_phoneController.text}';
                                     print(_fullPhoneNumber);
                                   }
                                 },
-                                items: countries.map<DropdownMenuItem<String>>((country) {
+                                items: countries.map<DropdownMenuItem<String>>((
+                                  country,
+                                ) {
                                   return DropdownMenuItem<String>(
                                     value: country['name'],
                                     child: Container(
-                                      padding: const EdgeInsets.symmetric(vertical: 8),
+                                      padding: const EdgeInsets.symmetric(
+                                        vertical: 8,
+                                      ),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Text(
                                             country['flag']!,
-                                            style: const TextStyle(fontSize: 16),
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                            ),
                                           ),
                                           const SizedBox(width: 6),
                                           Expanded(
@@ -135,20 +143,25 @@ class _SignupScreenState extends State<SignupScreen> {
                                 }).toList(),
                                 selectedItemBuilder: (BuildContext context) {
                                   return countries.map<Widget>((country) {
-                                    final isSelected = country['name'] == _selectedCountry;
+                                    final isSelected =
+                                        country['name'] == _selectedCountry;
                                     return Container(
                                       alignment: Alignment.centerLeft,
                                       child: Row(
                                         children: [
                                           Text(
                                             country['flag']!,
-                                            style: const TextStyle(fontSize: 16),
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                            ),
                                           ),
                                           Text(
                                             ' ${country['name']} ${country['code']}',
                                             style: TextStyle(
                                               fontSize: 10,
-                                              color: isSelected ? Colors.black87 : Colors.grey[600],
+                                              color: isSelected
+                                                  ? Colors.black87
+                                                  : Colors.grey[600],
                                             ),
                                             overflow: TextOverflow.ellipsis,
                                           ),
@@ -170,13 +183,11 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                         ),
 
-
                         Container(
                           height: 24,
                           width: 1,
                           color: Colors.grey[300],
                         ),
-
 
                         Flexible(
                           flex: 3,
@@ -200,7 +211,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20,),
+                  const SizedBox(height: 20),
 
                   SizedBox(
                     width: double.infinity,
@@ -214,11 +225,8 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                   ),
 
-
                   TextButton(
-                    onPressed: () {
-
-                    },
+                    onPressed: () {},
                     child: const Text(
                       'VIEW OTHER OPTION',
                       style: TextStyle(
@@ -228,7 +236,6 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                     ),
                   ),
-
 
                   SafeArea(
                     child: Flexible(
