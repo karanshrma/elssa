@@ -1,6 +1,5 @@
 import 'package:elssa/features/auth/screens/add_new_address.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
 import '../../../core/custom_elevated_button.dart';
@@ -33,9 +32,8 @@ class _OtpScreenState extends State<OtpScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 40), // Reduced space from app bar to image
+            const SizedBox(height: 40),
 
-            // OTP Image
             Image.asset(
               'assets/images/otp.png',
               height: 150,
@@ -43,7 +41,7 @@ class _OtpScreenState extends State<OtpScreen> {
               fit: BoxFit.contain,
             ),
 
-            const SizedBox(height: 32), // Reduced from 52
+            const SizedBox(height: 32),
 
             Text(
               'OTP Verification',
@@ -56,28 +54,28 @@ class _OtpScreenState extends State<OtpScreen> {
               textAlign: TextAlign.center,
               text: TextSpan(
                 text: 'Enter the OTP sent to ',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: Colors.grey
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(color: Colors.grey),
                 children: const <TextSpan>[
                   TextSpan(
                     text: '+1 9879878975',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     ),
                   ),
                 ],
               ),
             ),
 
-            const SizedBox(height: 32), // Reduced from 48
+            const SizedBox(height: 32),
 
             OtpTextField(
               numberOfFields: 4,
               showFieldAsBox: true,
-              borderColor: const Color(0xFFE7E7E7), // Using your specified color
-              enabledBorderColor: const Color(0xFFE7E7E7), // Using your specified color
+              borderColor: const Color(0xFFE7E7E7),
+              enabledBorderColor: const Color(0xFFE7E7E7),
               focusedBorderColor: Colors.black,
               borderWidth: 1.5,
               borderRadius: BorderRadius.circular(15),
@@ -108,27 +106,27 @@ class _OtpScreenState extends State<OtpScreen> {
               },
             ),
 
-            const SizedBox(height: 16), // Reduced from 8 but added more space
+            const SizedBox(height: 16),
 
             RichText(
               text: TextSpan(
                 text: 'OTP not received? ',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: Colors.grey
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(color: Colors.grey),
                 children: const <TextSpan>[
                   TextSpan(
                     text: 'RESEND OTP',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
                     ),
                   ),
                 ],
               ),
             ),
 
-            const SizedBox(height: 56,),
+            const SizedBox(height: 56),
 
             SafeArea(
               child: SizedBox(
@@ -137,9 +135,9 @@ class _OtpScreenState extends State<OtpScreen> {
                 child: CustomElevatedbutton(
                   onPressed: () {
                     Navigator.pushAndRemoveUntil(
-                        context,
-                        AddNewAddressScreen.route(),
-                            (route) => false
+                      context,
+                      AddNewAddressScreen.route(),
+                      (route) => false,
                     );
                   },
                   text: 'VERIFY & PROCEED',
@@ -148,7 +146,7 @@ class _OtpScreenState extends State<OtpScreen> {
               ),
             ),
 
-            const SizedBox(height: 16), // Bottom padding
+            const SizedBox(height: 16),
           ],
         ),
       ),

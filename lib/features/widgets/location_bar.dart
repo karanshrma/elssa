@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../core/app_colors.dart';
-import '../../core/app_constants.dart';
 
 class LocationBar extends StatelessWidget {
   final String locationText;
@@ -18,7 +16,7 @@ class LocationBar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: Row(
         children: [
-          /// LEFT SIDE (Location) - Expanded to take available space
+
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +48,6 @@ class LocationBar extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 4),
-                // Fixed text overflow with proper constraints
                 SizedBox(
                   width: double.infinity,
                   child: Text(
@@ -70,7 +67,7 @@ class LocationBar extends StatelessWidget {
 
           const SizedBox(width: 16),
 
-          /// RIGHT SIDE (Search) - Made tappable
+
           GestureDetector(
             onTap: onSearchTap ?? () {
               ScaffoldMessenger.of(context).showSnackBar(

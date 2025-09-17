@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _currentIndex = index;
     });
-    // Show snackbar or handle navigation
+
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('Tapped on item $index')),
     );

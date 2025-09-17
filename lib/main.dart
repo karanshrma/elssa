@@ -32,11 +32,11 @@ class _MyAppState extends State<MyApp> {
       title: 'Elssa',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xFFFDFEFE), // Global scaffold background
+        scaffoldBackgroundColor: const Color(0xFFFDFEFE),
         appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFFFDFEFE), // Global AppBar background
-          elevation: 0, // Optional: removes shadow for cleaner look
-          foregroundColor: Colors.black, // Optional: sets text/icon color
+          backgroundColor: Color(0xFFFDFEFE),
+          elevation: 0,
+          foregroundColor: Colors.black,
         ),
       ),
       home: SignupScreen(),

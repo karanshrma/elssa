@@ -67,7 +67,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
               ),
             ),
             SizedBox(height: 12),
-            // Search Box pill
+            // Search Box
             Container(
               width: double.infinity,
               height: 50,

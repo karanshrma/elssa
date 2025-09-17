@@ -22,8 +22,6 @@ class _LoginScreenState extends State<LoginScreen> {
   String _fullPhoneNumber = '';
   String _selectedFlag = '🇺🇸';
 
-  // List of 10 countries with their details
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +41,6 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             SizedBox(height: 20),
 
-            // Welcome Back Title
             Text(
               'Welcome Back!',
               style: TextStyle(
@@ -55,17 +52,15 @@ class _LoginScreenState extends State<LoginScreen> {
 
             SizedBox(height: 40),
 
-            // Continue with Facebook Button
             Container(
               width: double.infinity,
               height: 56,
               child: ElevatedButton.icon(
                 onPressed: () {
-                  // Handle Facebook login
                   print('Continue with Facebook');
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF7583CA), // Purple color
+                  backgroundColor: Color(0xFF7583CA),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(28),
                   ),
@@ -89,13 +84,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
             SizedBox(height: 16),
 
-            // Continue with Google Button
             Container(
               width: double.infinity,
               height: 56,
               child: OutlinedButton.icon(
                 onPressed: () {
-                  // Handle Google login
                   print('Continue with Google');
                 },
                 style: OutlinedButton.styleFrom(
@@ -107,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 icon: SvgPicture.asset(
                   'assets/images/google_logo.svg',
-                  // You'll need to add this asset
+
                   width: 24,
                   height: 24,
                 ),
@@ -128,7 +121,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
             SizedBox(height: 32),
 
-            // OR divider
             Center(
               child: Text(
                 'OR CONTINUE WITH PHONE NUMBER',
@@ -142,7 +134,6 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             SizedBox(height: 24),
 
-            // Phone Number Input
             Container(
               decoration: BoxDecoration(
                 color: Colors.grey[100],
@@ -150,7 +141,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               child: Row(
                 children: [
-                  // Country Code Dropdown
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     child: DropdownButtonHideUnderline(
@@ -239,10 +229,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
 
-                  // Divider
                   Container(height: 24, width: 1, color: Colors.grey[300]),
 
-                  // Phone Number Field
                   Expanded(
                     child: TextField(
                       controller: _phoneController,
@@ -267,13 +255,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
             SizedBox(height: 24),
 
-            // Log In Button
             Container(
               width: double.infinity,
               height: 56,
               child: CustomElevatedbutton(
                 onPressed: () {
-                  // Handle phone login
                   Navigator.push(context, OtpScreen.route());
                   print(
                     'Log in with phone: $_selectedCountryCode${_phoneController.text}',
@@ -287,12 +273,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
             SizedBox(height: 16),
 
-            // Forgot Password
             Center(
               child: TextButton(
-                onPressed: () {
-
-                },
+                onPressed: () {},
                 child: Text(
                   'Forgot Password?',
                   style: TextStyle(
@@ -303,9 +286,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            Spacer(
-              flex: 3,
-            ),
+            Spacer(flex: 3),
             SafeArea(
               child: Flexible(
                 child: Row(

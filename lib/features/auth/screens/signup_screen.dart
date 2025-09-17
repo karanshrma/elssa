@@ -27,9 +27,9 @@ class _SignupScreenState extends State<SignupScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Expanded SVG section
+
           Expanded(
-            flex: 4, // Reduced from 5 to 4
+            flex: 4,
             child: SizedBox(
               width: double.infinity,
               child: SvgPicture.asset(
@@ -41,14 +41,14 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
           ),
 
-          // Content section
+
           Expanded(
-            flex: 4, // Increased from 3 to 4 for more space
+            flex: 4,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 children: [
-                  // Title and subtitle
+
                   Column(
                     children: [
                       Center(
@@ -73,7 +73,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ],
                   ),
 
-                  // Phone number input
+
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[100],
@@ -81,7 +81,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     child: Row(
                       children: [
-                        // Country Code Dropdown - Made more compact
+
                         Flexible(
                           flex: 2,
                           child: Container(
@@ -89,7 +89,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             child: DropdownButtonHideUnderline(
                               child: DropdownButton<String>(
                                 value: _selectedCountry,
-                                isExpanded: true, // This helps prevent overflow
+                                isExpanded: true,
                                 onChanged: (String? newValue) {
                                   if (newValue != null) {
                                     final country = countries.firstWhere(
@@ -170,14 +170,14 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                         ),
 
-                        // Divider
+
                         Container(
                           height: 24,
                           width: 1,
                           color: Colors.grey[300],
                         ),
 
-                        // Phone Number Field
+
                         Flexible(
                           flex: 3,
                           child: TextField(
@@ -201,7 +201,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                   ),
                   const SizedBox(height: 20,),
-                  // Sign up button
+
                   SizedBox(
                     width: double.infinity,
                     height: 50,
@@ -214,10 +214,10 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                   ),
 
-                  // View other options
+
                   TextButton(
                     onPressed: () {
-                      // Handle view other options
+
                     },
                     child: const Text(
                       'VIEW OTHER OPTION',
@@ -229,7 +229,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                   ),
 
-                  // Already have account - Fixed overflow here
+
                   SafeArea(
                     child: Flexible(
                       child: Row(

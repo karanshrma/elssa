@@ -8,8 +8,6 @@ class AppColors {
   static const Color border = Color(0xFFE0E0E0);
   static const Color success = Color(0xFF4CAF50);
 }
-
-// shared/widgets/app_snackbar.dart
 class AppSnackbar {
   static void show(BuildContext context, String message) {
     ScaffoldMessenger.of(context).hideCurrentSnackBar();
