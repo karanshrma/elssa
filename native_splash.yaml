@@ -1,0 +1,16 @@
+flutter_native_splash:
+  # Background color - white to match your logo background
+  color: "#FDFEFE"
+
+  # Add your ELSSA logo as the splash image
+  image: "assets/images/logo.png"
+  branding: "assets/images/footer.png"
+
+
+
+
+  # Android 12+ specific configuration
+  android_12:
+    image: assets/images/logo.png
+    branding: "assets/images/footer.png"
+    color: "#ffffff"
