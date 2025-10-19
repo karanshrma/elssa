@@ -1,7 +1,6 @@
 import 'package:elssa/core/custom_elevated_button.dart';
 import 'package:elssa/features/auth/screens/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../global_variables.dart';
@@ -65,7 +64,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       Text(
                         'Continue with Phone Number',
                         style: TextStyle(
-                          fontSize: 11.sp,
+                          fontSize: 11,
                           color: Colors.grey[600],
                         ),
                       ),

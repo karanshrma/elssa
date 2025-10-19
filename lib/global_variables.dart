@@ -10,6 +10,7 @@ final List<Map<String, String>> countries = [
   {'name': 'BRA', 'code': '+55', 'flag': '🇧🇷', 'fullName': 'Brazil'},
   {'name': 'UAE', 'code': '+971', 'flag': '🇦🇪', 'fullName': 'United Arab Emirates'},
 ];
+
 const List<String> carouselImages = [
   'https://res.cloudinary.com/dfpolwe00/image/upload/v1758048023/carousel_srithz.png',
   'https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/WLA/TS/D37847648_Accessories_savingdays_Jan22_Cat_PC_1500.jpg',

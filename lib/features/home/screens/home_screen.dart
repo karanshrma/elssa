@@ -1,16 +1,16 @@
-import 'package:elssa/features/widgets/location_bar.dart';
+
 import 'package:flutter/material.dart';
 import '../../../core/carousel_image.dart';
 import '../../../app_bottom_nav.dart';
 import '../../../core/footer_watermark.dart';
 import '../../../core/section_tile.dart';
-import '../../../global_variables.dart';
 import '../../services/widgets/cleaning_services_carousel.dart';
 import '../../services/widgets/popular_services_carousel.dart';
 import '../../services/widgets/safety_measures_section.dart';
 import '../../services/widgets/service_category_grid.dart';
 import '../../services/widgets/trust_badges_row.dart';
 import '../../services/widgets/why_choose_us.dart';
+import '../widgets/location_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   static route() => MaterialPageRoute(builder: (context) => const HomeScreen());
